@@ -5,10 +5,10 @@
   
   <entry>
     <title>OpenCore &amp; 黑苹果安装教程</title>
-    <link href="/2022/10/12/OpenCore-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
-    <url>/2022/10/12/OpenCore-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <link href="/2077/05/23/OpenCore-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
+    <url>/2077/05/23/OpenCore-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
     
-    <content type="html"><![CDATA[<p>题外话：前两天发现原来那个 Hexo 莫名坏了，重开了一个，顺便扔掉了之前的垃圾文。</p>]]></content>
+    <content type="html"><![CDATA[<p>题外话：前两天发现原来那个 Hexo 莫名坏了，重开了一个，顺便扔掉了之前的垃圾文。</p><p>好了，闲话少说，进入正题吧。</p><h2 id="初识黑苹果"><a href="#初识黑苹果" class="headerlink" title="初识黑苹果"></a>初识黑苹果</h2><p>简单来说，黑苹果就是在非苹果设备上安装 macOS 的行为。第一台黑苹果机器诞生于 2005 年，所以它的历史在计算机领域可以说是比较悠久的了。</p><h2 id="原生硬件"><a href="#原生硬件" class="headerlink" title="原生硬件"></a>原生硬件</h2><p>经过多年发展，黑苹果目前已经比较完美了。如果你想更原生，可以看看下面几个建议：</p><ul><li><p>处理器：推荐 Intel </p></li><li><p>显卡：集显即可（如果图形方面要求高，可以附加 <strong>免驱</strong> 独显）</p></li><li><p>声卡：ALC 系列声卡</p></li><li><p>网卡：博通 系列网卡</p><blockquote><p>Intel 无线网卡同样可以驱动，但是隔空投送用不了。所以还是推荐博通。</p></blockquote></li><li><p>蓝牙：大部分都能驱动。</p></li></ul><h2 id="四种-BootLoader"><a href="#四种-BootLoader" class="headerlink" title="四种 BootLoader"></a>四种 BootLoader</h2><ul><li><p><strong>Chameleon</strong> （变色龙）</p><p>出现较早。由于不支持 UEFI 启动，目前使用人数较少。</p></li><li><p><strong>Clover</strong> （四叶草）</p><p>比 Chameleon 更强大，目前使用人数较多。</p><p>对于设备的兼容性较好，配置难度较低。但安装后，系统难以直接升级。</p></li><li><p><strong>OpenCore</strong> （OC）</p><p>出现较晚，目前使用人数较多。</p><p>难度比 Clover 高，但原生性好。</p></li><li><p><strong>Ozmosis</strong> （OZ）</p><p>出现较晚，难度高，对于主板要求高，但原生性极好。</p></li></ul>]]></content>
     
     
     
