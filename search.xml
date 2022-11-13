@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>OpenCore &amp; 黑苹果安装教程</title>
+    <url>//post/OpenCore-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</url>
+    <content><![CDATA[<p>题外话：前两天发现原来那个 Hexo 莫名坏了，重开了一个，顺便扔掉了之前的垃圾文。</p>
+<p>好了，闲话少说，进入正题吧。</p>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="初识黑苹果"><a href="#初识黑苹果" class="headerlink" title="初识黑苹果"></a>初识黑苹果</h2><p>简单来说，黑苹果就是在非苹果设备上安装 macOS 的行为。第一台黑苹果机器诞生于 2005 年，所以它的历史在计算机领域可以说是比较悠久的了。</p>
+<h2 id="四种-BootLoader"><a href="#四种-BootLoader" class="headerlink" title="四种 BootLoader"></a>四种 BootLoader</h2><ul>
+<li><p><strong>Chameleon</strong> （变色龙）</p>
+<p>出现较早。由于不支持 UEFI 启动，目前使用人数较少。</p>
+</li>
+<li><p><strong>Clover</strong> （四叶草）</p>
+<p>出现较早，比变色龙更强大，目前使用人数较多。</p>
+<p>配置难度较低，原生性较好。</p>
+</li>
+<li><p><strong>OpenCore</strong> （OC）</p>
+<p>出现较晚，目前使用人数较多。</p>
+<p>难度比 Clover 略高，但原生性好。</p>
+</li>
+<li><p><strong>Ozmosis</strong> （OZ）</p>
+<p>出现较晚，难度高，对于主板要求高，但原生性极好。</p>
+</li>
+</ul>
+<p>本文主要讨论 OpenCore 引导下的黑苹果安装方式。Clover 用户也可参考此教程。</p>
+<h1 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h1><h2 id="查看并记录设备参数"><a href="#查看并记录设备参数" class="headerlink" title="查看并记录设备参数"></a>查看并记录设备参数</h2><ul>
+<li><p><strong>处理器代号</strong></p>
+<p>打开设置，找到「系统信息」，查看处理器型号。</p>
+<p>进入 Intel 官网 <a href="https://intel.cn/">intel.cn</a> ，搜索</p>
+</li>
+<li><p><strong>集显型号</strong></p>
+</li>
+<li><p><strong>声卡型号</strong></p>
+<p>进入设备管理器，点击「声音、视频和游戏控制器」。</p>
+<p>去除所有外置音频设备，然后右键「声音……控制器」列表中的唯一一项，在右键菜单中点击「属性」。</p>
+<p>在「属性」菜单中找到「详细信息」，然后选择「设备实例路径」。类似下面这样：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">HDAUDIO\FUNC_01&amp;VEN_10EC&amp;DEV_0292&amp;SUBSYS_17AA2212&amp;REV_1000\4&amp;3A3CDA8B&amp;0&amp;0001<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>重点关注其中的 <code>DEV_0292</code> 部分，这表示声卡型号就是 ALC292。记下这个声卡型号。</p>
+</li>
+</ul>
+<h1 id="实用知识"><a href="#实用知识" class="headerlink" title="实用知识"></a>实用知识</h1><h2 id="原生硬件"><a href="#原生硬件" class="headerlink" title="原生硬件"></a>原生硬件</h2><p>经过多年发展，黑苹果目前已经比较完美了。如果你想更原生，可以看看下面几个建议：</p>
+<ul>
+<li><p>处理器：推荐 Intel </p>
+</li>
+<li><p>显卡：集显即可（如果图形方面要求高，可以附加 <strong>免驱</strong> 独显）</p>
+</li>
+<li><p>声卡：ALC 系列声卡</p>
+</li>
+<li><p>网卡：博通 系列网卡</p>
+<blockquote>
+<p>Intel 无线网卡同样可以驱动，但是隔空投送用不了。所以还是推荐博通。</p>
+</blockquote>
+</li>
+<li><p>蓝牙：大部分都能驱动。</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>技术向,黑苹果</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//post/hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
