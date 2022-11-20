@@ -61,6 +61,66 @@
       </tags>
   </entry>
   <entry>
+    <title>USTC Hackergame 2022 Write Up</title>
+    <url>//post/USTC%20Hackergame%202022%20Write%20Up.html</url>
+    <content><![CDATA[<blockquote>
+<p>赛事链接：<a href="https://hack.lug.ustc.edu.cn/">https://hack.lug.ustc.edu.cn</a><br>评价帖：<a href="https://www.zhihu.com/question/561919414/answer/2740390795">参加中国科学技术大学第九届信息安全大赛（Hackergame 2022）是怎样一种体验？</a></p>
+</blockquote>
+<h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>在提交后可以看到 URL：</p>
+<p><img src="https://voidtech.cn/i/2022/11/20/iudrjx.png" alt="例图"></p>
+<p>修改参数 <code>result</code> 为 2022 ，提交即可获取 flag。</p>
+<h2 id="猫咪问答喵"><a href="#猫咪问答喵" class="headerlink" title="猫咪问答喵"></a>猫咪问答喵</h2><blockquote>
+<ol>
+<li>中国科学技术大学 NEBULA 战队（USTC NEBULA）是于何时成立的喵？</li>
+</ol>
+</blockquote>
+<p>搜索即可，答案为 <code>2017-03</code> 。</p>
+<blockquote>
+<ol start="2">
+<li>2022 年 9 月，中国科学技术大学学生 Linux 用户协会（LUG @ USTC）在科大校内承办了软件自由日活动。除了专注于自由撸猫的主会场之外，还有一些和技术相关的分会场（如闪电演讲 Lightning Talk）。其中在第一个闪电演讲主题里，主讲人于 slides 中展示了一张在 GNOME Wayland 下使用 Wayland 后端会出现显示问题的 KDE 程序截图，请问这个 KDE 程序的名字是什么？</li>
+</ol>
+<p>提示：英文单词，首字母大写，其他字母小写。</p>
+</blockquote>
+<p>在 <a href="https://lug.ustc.edu.cn/wiki/lug/events/sfd/">这个链接</a> 可以找到 <a href="https://ftp.lug.ustc.edu.cn/%E6%B4%BB%E5%8A%A8/2022.9.20_%E8%BD%AF%E4%BB%B6%E8%87%AA%E7%94%B1%E6%97%A5/slides/gnome-wayland-user-perspective.pdf">Slide 文件</a> ，其中出现问题的截图是：</p>
+<p><img src="https://voidtech.cn/i/2022/11/20/j5gqkb.png" alt="问题截图"></p>
+<p>发现 Settings 菜单的底部是 Configure Kdenlive ，所以 KDE 程序叫做 <code>Kdenlive</code> 。</p>
+<blockquote>
+<ol start="3">
+<li>22 年坚持，小 C 仍然使用着一台他从小用到大的 Windows 2000 计算机。那么，在不变更系统配置和程序代码的前提下，Firefox 浏览器能在 Windows 2000 下运行的最后一个大版本号是多少？</li>
+</ol>
+<p>提示：格式为 2 位数字的整数。</p>
+</blockquote>
+<p>Google 一下 <code>Firefox Windows 2000</code> ，发现最大版本号为 12 。</p>
+<blockquote>
+<ol start="4">
+<li><p>你知道 PwnKit（CVE-2021-4034）喵？据可靠谣传，出题组的某位同学本来想出这样一道类似的题，但是发现 Linux 内核更新之后居然不再允许 argc 为 0 了喵！那么，请找出在 Linux 内核 master 分支（torvalds&#x2F;linux.git）下，首个变动此行为的 commit 的 hash 吧喵！</p>
+<p>提示：格式为 40 个字符长的 commit 的 SHA1 哈希值，字母小写，注意不是 merge commit。</p>
+</li>
+</ol>
+</blockquote>
+<p>去 Github  上的 <a href="https://hub.nuaa.cf/torvalds/linux">Linux 仓库</a> ，搜索 CVE-2021-4034 即可。</p>
+<p>Hash：<code>dcd46d897adb70d63e025f175a00a89797d31a43</code> 。</p>
+<blockquote>
+<ol start="5">
+<li>通过监视猫咪在键盘上看似乱踩的故意行为，不出所料发现其秘密连上了一个 ssh 服务器，终端显示 <code>ED25519 key fingerprint is MD5:e4:ff:65:d7:be:5d:c8:44:1d:89:6b:50:f5:50:a0:ce.</code>，你知道猫咪在连接什么域名吗？<br>提示：填写形如 example.com 的二级域名，答案中不同的字母有 6 个。</li>
+</ol>
+</blockquote>
+<p>Shodan 搜索这个 fingerprint 即可。可知域名为：<code>sdf.org</code> 。</p>
+<blockquote>
+<ol start="6">
+<li><p>中国科学技术大学可以出校访问国内国际网络从而允许云撸猫的“网络通”定价为 20 元一个月是从哪一天正式实行的？</p>
+<p>提示：格式为 YYYY-MM-DD，例如 2038 年 1 月 1 日，即为 2038-01-01。</p>
+</li>
+</ol>
+</blockquote>
+<p>Google 可以找到 <a href="https://ustcnet.ustc.edu.cn/2015/0127/c11088a119923/page.htm">网络服务及费用分担标准 </a> ，然后去 官方文件 -&gt; 网字文件 可以找到 <a href="https://ustcnet.ustc.edu.cn/2003/0301/c11109a210890/page.htm">网字〔2003〕1号</a> ，它的实行日期是 <code>2003-03-01</code> 。</p>
+<h2 id="旅行照片-2-0"><a href="#旅行照片-2-0" class="headerlink" title="旅行照片 2.0"></a>旅行照片 2.0</h2><p><img src="http://202.38.93.111:10055/travel-photo-2.jpg" alt="题干"></p>
+]]></content>
+      <tags>
+        <tag>技术向,黑苹果</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>//post/hello-world.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
